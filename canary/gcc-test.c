@@ -9,6 +9,7 @@ void func() {
   fgets(input,512,stdin);
   fgets(buff,10,stdin);
   printf("Hi %s\n", input);
+  printf(buff);
 }
 
 int main() {

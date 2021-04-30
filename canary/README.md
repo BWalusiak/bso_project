@@ -20,6 +20,13 @@ Kanarek ładowany jest do rejestru eax, następnie odejmowana jest wartość por
 
 W obydwu kompilatorach kanarek jest defaultowo wyłączony ze względu na wydajność (na niektórych dystrybucjach linuxa np. arch, OpenBSD kompilatory domyślnie używają flagi `fstack-protector`). Podobnie zachowuje się kompilator intela - [link](https://software.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference/top/compiler-reference/compiler-options/compiler-option-details/data-options/fstack-protector.html).
 
+W gcc możliwe opcje kanarka to:
+
+ - `fstack-protector` - kompilator używa kanarka dla funkcji używającyh `alloca()` lub z bufforami > 8
+ - `-fstack-protector-all` - kompilator używa kanarka dla wszystkich funkcji
+ - `-fstack-protector-strong` - `fstack-protector` + funkcje z lokacnymi tablicami oraz odniesieniami do ramki stosu (liczą się tylko zmienne faktycznie trafiające na stos, kompilator nie bierze pod uwagę tych wyoptymalizowanych lub przechowywanych w rejestrach)
+ - `-fstack-protector-explicit` - kompilator używa tylko kanarka dla funkcji z atrybutem `stack_protect`
+
 [Dokumentacja gcc](https://gcc.gnu.org/onlinedocs/gcc-11.1.0/gcc/Instrumentation-Options.html#Instrumentation-Options) nie specyfikuje domyślnego zachowania, ale z przeprowadzonego przeze testu wynika że kanarek jest domyślnie wyłączony.
 
 ### Test
@@ -37,6 +44,7 @@ void func() {
   fgets(input,512,stdin);
   fgets(buff,10,stdin);
   printf("Hi %s\n", input);
+  printf(buff);
 }
 
 int main() {
