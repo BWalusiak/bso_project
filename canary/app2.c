@@ -5,7 +5,6 @@ void func() {
   char input[16];
   char leak[32];
 
-
   // canary leak
   gets(leak);
   printf(leak);
