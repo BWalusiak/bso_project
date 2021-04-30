@@ -1,6 +1,6 @@
 # Canary
 ## Opis
-`Stack Canary` jest metodą zabezpieczania stosu. Polega ona na umieszczeniu na stosie przed adresem powrotu losowo generowanej wartości. Przed wykonaniem instrukcji `ret` sprawdzana jest wartość kanarka. Jeżeli została zmodyfikowana działanie programu jest zatrzymywane z błęden `stack smashing detected`.
+`Stack Canary` jest metodą zabezpieczania stosu. Polega ona na umieszczeniu na stosie przed adresem powrotu losowo generowanej wartości. Przed wykonaniem instrukcji `ret` sprawdzana jest wartość kanarka. Jeżeli została zmodyfikowana działanie programu jest zatrzymywane z błędem `stack smashing detected`.
 
 Wartość kanarka z reguły kończy się bajtami `\x00` - znakiem końca stringa. Ma to na celu utrudnienie wycieku.
 
