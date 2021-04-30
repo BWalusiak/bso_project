@@ -1,16 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void win() {
-	system("/bin/sh");
-}
-
 void func() {
-  char input[16];
+  char input[512];
+  char *buff=alloca(10);
 
   printf("Please enter your name: \n");
-  gets(input);
-
+  fgets(input,512,stdin);
+  fgets(buff,10,stdin);
   printf("Hi %s\n", input);
 }
 

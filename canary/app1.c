@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void win() {
-	system("/bin/sh");
-}
-
 void func() {
   char input[16];
 
