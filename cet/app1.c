@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+
+void win() { system("/bin/sh"); }
 
 void func() {
-  char input[200];
+  char input[16];
 
+  printf("%p\n",printf);
   printf("Please enter your name: \n");
   gets(input);
-  printf(input);
 
-  scanf("%s",input);
-  printf(input);
+  printf("Hi %s\n", input);
 }
 
 int main() {

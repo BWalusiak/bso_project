@@ -1,0 +1,35 @@
+IMG: /home/kali/bso_project/cet/app1-cet.o Address: 0x5657d1ff:0x5657b000 added to the checked image map
+IMG: /lib/ld-linux.so.2 Address: 0xf7f786c7:0xf7f50000 added to the legacy images list
+IMG: [vdso] Address: 0xf7f4f1bd:0xf7f4e000 added to the legacy images
+IMG: [vdso] Address: 0xf7f4f1bd:0xf7f4e000 added to the legacy images list
+IMG: /lib/i386-linux-gnu/libc.so.6 Address: 0xeca80fbb:0xec898000 added to the legacy images list
+Control flow ENDBRANCH error detected at IP: 0x5657c080 INS:  xor ebp, ebp
+     Last branch IP: 0xf7f51104 INS:  jmp edi
+Call stack:
+#        IP           FUNCTION                                        IMAGE NAME                                                                                                    FILE NAME:LINE:COLUMN
+ 0# 0x5657c080  _start              /home/kali/bso_project/cet/app1-cet.o:0x1080
+
+
+Control flow ENDBRANCH error detected at IP: 0x5657c280 INS:  push ebp
+     Last branch IP: 0xec8b6dc8 INS:  call dword ptr [esp+0x8c]
+Call stack:
+#        IP           FUNCTION                                        IMAGE NAME                                                                                                    FILE NAME:LINE:COLUMN
+ 0# 0x5657c280  __libc_csu_init     /home/kali/bso_project/cet/app1-cet.o:0x1280
+ 1# 0xec8b6dd2  __libc_start_main   /lib/i386-linux-gnu/libc.so.6:0x1edd2
+ 2# 0x5657c060  .plt                /home/kali/bso_project/cet/app1-cet.o:0x1060
+ 3# 0x5657c080  _start              /home/kali/bso_project/cet/app1-cet.o:0x1080
+
+
+Control flow ENDBRANCH error detected at IP: 0x5657c1b0 INS:  jmp 0x5657c110
+     Last branch IP: 0x5657c2c4 INS:  call dword ptr [ebp+esi*4-0x110]
+Call stack:
+#        IP           FUNCTION                                        IMAGE NAME                                                                                                    FILE NAME:LINE:COLUMN
+ 0# 0x5657c110  register_tm_clones  /home/kali/bso_project/cet/app1-cet.o:0x1110
+ 1# 0x5657c2d5  __libc_csu_init     /home/kali/bso_project/cet/app1-cet.o:0x12d5
+ 2# 0x5657c280  __libc_csu_init     /home/kali/bso_project/cet/app1-cet.o:0x1280
+ 3# 0xec8b6dd2  __libc_start_main   /lib/i386-linux-gnu/libc.so.6:0x1edd2
+ 4# 0x5657c060  .plt                /home/kali/bso_project/cet/app1-cet.o:0x1060
+ 5# 0x5657c080  _start              /home/kali/bso_project/cet/app1-cet.o:0x1080
+
+
+# $eof
