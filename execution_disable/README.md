@@ -11,7 +11,7 @@ NX zapobiega bezpośredniemu wykonywaniu wstrzykniętego na stos kodu. Pomimo te
 
 ## Clang i GCC
 
-W obydu kompilatorach NX jest defaultowo włączony. W GCC możemy wyłączyć nx przez flagę `-z execstack` a w Clang'u przez flagę `-fno-sanitize=safe-stack`.
+W obydu kompilatorach NX jest defaultowo włączony. W obydu kompilatorach możemy wyłączyć nx przez flagę `-z execstack`.
 
 ## Exploit 1 - BOF z shellcode
 ### Podatna aplikacja
