@@ -3,14 +3,12 @@
 #include <string.h>
 
 void func() {
-  char input[200];
+  char input[16];
 
   printf("Please enter your name: \n");
   gets(input);
-  printf(input);
 
-  scanf("%s", input);
-  puts(input);
+  printf("Hi %s\n", input);
 }
 
 int main() {

@@ -1,6 +1,8 @@
-hellomake:
-	gcc app1.c -m32 -static -w -o app1-static.o
-	gcc app1.c -m32 -w -o app1-cet.o -fcf-protection
+CC = gcc
+CFLAGS = -m32 -fno-stack-protector -w
 
+hellomake:
+	$(CC) app1.c $(CFLAGS) -static -o app1-static.o
+	$(CC) app1.c $(CFLAGS) -fcf-protection -o app1-cet.o 
 clean:
-	rm -f app1.o app1-pie.o app1-static.o
+	rm -f app1-cet.o app1-static.o
